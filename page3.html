@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;500&family=Dancing+Script:wght@500;700&display=swap" rel="stylesheet">
+<title>Love Letter 💌</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body class="bg3">
+<div class="card">
+  <h1 class="glow">Hey my sweetieee ziiizuuuu 💖💕</h1>
+  <p id="typedText" class="letter"></p>
+  <button onclick="location.href='page4.html'">I Agree 💖</button>
+</div>
+
+<script>
+const text="I know i cannot give you a gift you deserve, but i would always try my best to make you happy no matter what. I hope you enjoyed your special day. Till now i hope i have succeded to make it the best day for you. So do you agree that i have made your day better..????";
+let i=0;
+function type(){
+ let el=document.getElementById("typedText");
+ if(el && i<text.length){
+  el.innerHTML+=text[i++];
+  setTimeout(type,40);
+ }
+}
+type();
+</script>
+</body>
+</html>

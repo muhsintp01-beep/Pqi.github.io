@@ -1,0 +1,99 @@
+/* GLOBAL STYLES */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  overflow-x: hidden;
+}
+
+/* Buttons */
+button {
+  cursor: pointer;
+  border: none;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+button:hover {
+  transform: scale(1.05);
+}
+
+/* Cursor for typing animation */
+.cursor {
+  display: inline-block;
+  animation: blink 1s infinite;
+}
+@keyframes blink {
+  0%, 50%, 100% { opacity: 1; }
+  25%, 75% { opacity: 0; }
+}
+
+/* Popup style */
+.popup {
+  display: none;
+  position: fixed;
+  top:0; left:0; width:100%; height:100%;
+  background: rgba(0,0,0,0.8);
+  justify-content:center;
+  align-items:center;
+  z-index: 10;
+}
+.popup .popup-box {
+  background: white;
+  border-radius: 15px;
+  padding: 20px;
+  text-align:center;
+}
+
+/* Edge photos for 4th page */
+.edge {
+  position:absolute;
+  z-index:1;
+}
+.edge img {
+  width: 180px;
+  height:180px;
+  object-fit: cover;
+  border-radius:15px;
+  border:5px solid white;
+}
+
+/* Centered text in 4th page */
+.center-text {
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform: translate(-50%, -50%);
+  color:white;
+  text-align:center;
+  font-size:22px;
+  z-index:2;
+}
+
+/* Fireworks canvas */
+canvas#fireworks {
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  z-index:0;
+}
+
+/* Center gift button */
+#giftBtn {
+  display:none;
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%, -50%);
+  padding:15px 30px;
+  font-size:20px;
+  border:none;
+  border-radius:15px;
+  background:#ff4d6d;
+  color:white;
+  cursor:pointer;
+  box-shadow:0 5px 15px rgba(255,100,150,0.6);
+  z-index:3;
+}
+#giftBtn:hover { transform:translate(-50%,-50%) scale(1.05); }

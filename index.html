@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;500&display=swap" rel="stylesheet">
+<title>Happy Birthday 💖</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body class="bg1">
+<div class="card">
+  <h1 class="glow">Happy Birthday My Love 💖</h1>
+  <p>Enter the secret code 💌</p>
+  <input type="password" id="pass"><br><br>
+  <button onclick="checkPass()">Unlock 💕</button>
+  <p id="error"></p>
+</div>
+
+<!-- HINT BUTTON -->
+<button class="hint-btn" onclick="showHint()">Hint 💡</button>
+
+<!-- HINT POPUP -->
+<div id="hintPopup" class="popup">
+  <div class="popup-box">
+    <p>HINT: YOU WILL GET THE PASSWORD AFTER SENDING YOUR VIDEO TO YOUR BF 😏😏</p>
+    <button onclick="closeHint()">Okey 😁</button>
+  </div>
+</div>
+
+<script src="script.js"></script>
+<script>
+function showHint(){
+  document.getElementById("hintPopup").style.display="flex";
+}
+function closeHint(){
+  document.getElementById("hintPopup").style.display="none";
+}
+</script>
+</body>
+</html>

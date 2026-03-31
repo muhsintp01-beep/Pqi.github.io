@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;500&display=swap" rel="stylesheet">
+<title>For You 💕</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body class="bg2">
+<div class="card">
+  <h1 class="glow">Hey Birthday Girl 🎉</h1>
+  <p>You are the most special person in my life 💖</p>
+  <h2>Will you always be mine? 💍</h2>
+  <button onclick="openPopup()">Yes 😍</button>
+  <button onclick="moveNo(this)">No 😜</button>
+</div>
+
+<!-- POPUP -->
+<div id="popup" class="popup">
+  <div class="popup-box">
+    <p>Are you sure you can live the rest of your life with this idiot 😜</p>
+    <button onclick="goNext()">Yes 😘</button>
+    <button onclick="goNext()">Sorry but there's no escaping me 😉</button>
+  </div>
+</div>
+
+<script src="script.js"></script>
+<script>
+function openPopup(){
+  document.getElementById("popup").style.display="flex";
+}
+function goNext(){
+  window.location.href="page3.html";
+}
+</script>
+</body>
+</html>

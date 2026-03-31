@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;500&family=Dancing+Script:wght@500;700&display=swap" rel="stylesheet">
+<title>Our Memories 💑</title>
+<link rel="stylesheet" href="style.css">
+<style>
+body { margin:0; overflow:hidden; font-family:'Poppins', sans-serif; }
+canvas#fireworks { position:fixed; top:0; left:0; width:100%; height:100%; z-index:0; }
+.edge img { width:180px; height:180px; border:5px solid white; border-radius:15px; object-fit:cover; }
+.edge { position:absolute; z-index:1; }
+.top-left { top:10px; left:10px; }
+.top-right { top:10px; right:10px; }
+.bottom-left { bottom:10px; left:10px; }
+.bottom-right { bottom:10px; right:10px; }
+.center-text { position:absolute; top:50%; left:50%; transform:translate(-50%, -50%); color:white; text-align:center; font-size:22px; z-index:2; }
+#giftBtn {
+  display:none;
+  position:absolute; top:50%; left:50%; transform:translate(-50%, -50%);
+  padding:15px 30px; font-size:20px; border:none; border-radius:15px; background:#ff4d6d; color:white; cursor:pointer;
+  box-shadow:0 5px 15px rgba(255,100,150,0.6); z-index:3; transition:0.3s;
+}
+#giftBtn:hover { transform:translate(-50%,-50%) scale(1.05); }
+.popup { display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.8); justify-content:center; align-items:center; z-index:5; }
+.popup .popup-box { background:white; padding:20px; border-radius:15px; width:90%; max-width:500px; text-align:center; }
+</style>
+</head>
+
+<body>
+<canvas id="fireworks"></canvas>
+
+<!-- PHOTOS -->
+<div class="edge top-left"><img src="photo1.jpg"><span>Us 💖</span></div>
+<div class="edge top-right"><img src="photo2.jpg"><span>My Fav ❤️</span></div>
+<div class="edge bottom-left"><img src="photo3.jpg"><span>Memories ✨</span></div>
+<div class="edge bottom-right"><img src="photo4.jpg"><span>Forever 💕</span></div>
+
+<div class="center-text">
+  <h1 id="titleText"></h1>
+  <p id="messageText"></p>
+  <span class="cursor">|</span>
+</div>
+
+<button id="giftBtn" onclick="showGift()">HERE’S YOUR GIFT 😉😁</button>
+
+<div id="giftPopup" class="popup">
+  <div class="popup-box">
+    <video id="giftVideo" width="100%" controls autoplay>
+      <source src="gift.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <button onclick="closeGift()">Close 😘</button>
+  </div>
+</div>
+
+<script src="effects.js"></script>
+<script>
+const title="My Love 💖";
+const message="You are my everything my love💖. Every moment after you have came into my life has been the best for me💗.\n\nI promise to always make your bday a special one 😉. Ikk you deserve a better gift than these but i cannot give you those as ykk right😭.\n\nUmmmm also the photos are not the best this ai shit doesn’t understand anything so forgive me for that😅.\n\nSo wishing you a happyyyyyy 16th my loveeee😘💗.\n\nForever yours😝💗💗";
+
+let i=0,j=0;
+function typeTitle(){
+ if(i<title.length){
+  document.getElementById("titleText").innerHTML+=title[i++];
+  setTimeout(typeTitle,70);
+ } else typeMessage();
+}
+function typeMessage(){
+ if(j<message.length){
+  document.getElementById("messageText").innerHTML+=message[j]==="\n"?"<br><br>":message[j];
+  j++;
+  setTimeout(typeMessage,30);
+ } else { document.getElementById("giftBtn").style.display="block"; }
+}
+typeTitle();
+
+function showGift(){ document.getElementById("giftPopup").style.display="flex"; document.getElementById("giftVideo").play(); }
+function closeGift(){ document.getElementById("giftPopup").style.display="none"; const v=document.getElementById("giftVideo"); v.pause(); v.currentTime=0; }
+</script>
+</body>
+</html>
